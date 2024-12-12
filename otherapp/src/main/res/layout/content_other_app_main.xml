@@ -17,5 +17,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="unbind服务" />
+    <Button
+        android:id="@+id/btn_showActivePopupDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="显示开启的弹窗" />
+    <Button
+        android:id="@+id/btn_showUnactivePopupDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="显示关闭的弹窗" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

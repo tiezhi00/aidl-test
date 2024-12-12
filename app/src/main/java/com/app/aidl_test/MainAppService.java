@@ -8,6 +8,8 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 
+import com.app.aidl_test.util.Constants;
+
 public class MainAppService extends Service {
     private static final String TAG = "MainAppService";
     private String mStrData="";
@@ -17,6 +19,18 @@ public class MainAppService extends Service {
         public void setStringData(String strData) throws RemoteException {
             //在这里实现服务的具体方法
             mStrData = strData;
+        }
+
+
+        @Override
+        public void showPopupDialog(boolean isActive) throws RemoteException {
+            Log.i(TAG, "showPopupDialog: isActive=" + isActive);
+            //通知MainActivity显示弹窗
+            Intent intent = new Intent(MainAppService.this, MainActivity.class);
+            intent.putExtra("dialogType", Constants.DialogType_OpenData);
+            intent.putExtra("isActive", isActive);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);  // 添加这行代码
+            startActivity(intent);
         }
     };
 

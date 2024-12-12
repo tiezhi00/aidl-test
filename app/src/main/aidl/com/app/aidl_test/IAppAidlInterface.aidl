@@ -5,4 +5,5 @@ package com.app.aidl_test;
 
 interface IAppAidlInterface {
     void setStringData(String strData);
+    void showPopupDialog(boolean isActive);
 }
